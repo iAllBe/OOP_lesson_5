@@ -9,17 +9,12 @@
 
     public void Result() {
         int result = 0;
-        int x = view.getValue("x: ");
-        int y = view.getValue("y: ");
         int op = view.getValue("Выберите операцию: 1 - сложение, 2 - вычетание, 3 - умножение, 4 - деление: ");
 
         while (op < 1 || op > 4) {
             System.out.println("Введите корректный номер операции!");
             op = view.getValue("Выберите операцию: 1 - сложение, 2 - вычетание, 3 - умножение, 4 - деление: ");
         }
-
-        calc.setX(x);
-        calc.setY(y);
         if (op == 1) {
             result = calc.resultSum();
             view.print(result, "Sum: ");

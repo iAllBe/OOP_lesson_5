@@ -16,7 +16,8 @@ public class Main {
     public static void main(String[] args) {
         try {
             LOGGER.log(Level.INFO,"Начало новой операции");
-            Controller controller = new Controller(new View(), new Calc());
+            Controller controller = new Controller(new View(), CalcBuilder.getInstance().setX(9).setY(3).build());
+
             LOGGER.log(Level.INFO,"Вывод результата операции");
             controller.Result();
         } catch (Exception e){
